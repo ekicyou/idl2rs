@@ -1,6 +1,17 @@
 [package]
+authors = ["ekicyou <dot.station@gmail.com>"]
+description = "idl to rs convert"
 name = "idl2rs"
 version = "0.1.0"
-authors = [" <>"]
 
 [dependencies]
+lazy_static = "^0.2"
+regex = "^0.2"
+
+[dependencies.nom]
+features = ["regexp_macros"]
+version = "^2.1"
+
+[dev-dependencies.nom]
+features = ["regexp_macros","verbose-errors"]
+version = "^2.1"
