@@ -1,6 +1,7 @@
 [package]
+authors = ["ekicyou <dot.station@gmail.com>"]
 name = "idl2rs"
 version = "0.1.0"
-authors = [" <>"]
 
 [dependencies]
+nom = "^2.1.0"
