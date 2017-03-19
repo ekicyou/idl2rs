@@ -12,6 +12,8 @@ pub enum Token<'a> {
     Other(Cow<'a, str>),
 }
 
+// WebIDL grammar
+// https://triple-underscore.github.io/WebIDL-ja.html#idl-grammar
 
 named!(integer    <&str, &str>, re_find_static!(r#"^-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)"#));
 named!(float      <&str, &str>, re_find_static!(r#"^-?(([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([Ee][+-]?[0-9]+)?|[0-9]+[Ee][+-]?[0-9]+)"#));
