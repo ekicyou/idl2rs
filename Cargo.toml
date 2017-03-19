@@ -3,6 +3,12 @@ authors = ["ekicyou <dot.station@gmail.com>"]
 name = "idl2rs"
 version = "0.1.0"
 
+[dependencies]
+lazy_static = "^0.2.4"
+regex = "^0.1"
+serde = "^0.9.11"
+serde_derive = "^0.9.11"
+
 [dependencies.nom]
-version = "^2.1.0"
 features = ["regexp_macros", "stream", "verbose-errors"]
+version = "^2.1.0"
