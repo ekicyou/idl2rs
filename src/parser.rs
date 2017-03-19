@@ -13,4 +13,10 @@ pub enum Token<'a> {
 }
 
 
-named!(integer<&str, &str>, re_find_static!(r#"^-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)"#));
+named!(integer    <&str, &str>, re_find_static!(r#"^-?([1-9][0-9]*|0[Xx][0-9A-Fa-f]+|0[0-7]*)"#));
+named!(float      <&str, &str>, re_find_static!(r#"^-?(([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([Ee][+-]?[0-9]+)?|[0-9]+[Ee][+-]?[0-9]+)"#));
+named!(identifier <&str, &str>, re_find_static!(r#"^_?[A-Za-z][0-9A-Z_a-z-]*"#));
+named!(string     <&str, &str>, re_find_static!(r#"^"[^"]*""#));
+named!(whitespace <&str, &str>, re_find_static!(r#"^[\t\n\r ]+"#));
+named!(comment    <&str, &str>, re_find_static!(r#"^\/\/.*|\/\*(.|\n)*?\*\/"#));
+named!(other      <&str, &str>, re_find_static!(r#"^[^\t\n\r 0-9A-Za-z]"#));
